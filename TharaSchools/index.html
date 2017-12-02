@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <router-view></router-view>
+    </div>
+
+
+
+
+
+    <script>
+
+        var pages = ["navbar", "signin", "signup"];
+
+        $.when(
+
+            $.each(pages, function (key, value) {
+                $("#app").after('<div id="' + value + '"></div>');
+                $("#" + value).load("html/" + value + ".html");
+            }),
+
+            $.each(pages, function (key, value) {
+                $.getScript("js/" + value + ".js");
+            })
+
+        ).done(function () {
+            $.getScript("js/main.js");
+
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>
