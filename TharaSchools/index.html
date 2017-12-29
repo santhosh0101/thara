@@ -3,6 +3,7 @@
 <head>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link href="css/application.css" rel="stylesheet">
 
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -14,7 +15,9 @@
 
 
     <div id="app">
-        <router-view></router-view>
+        <router-view class="view one"></router-view>
+        <router-view class="view two" name="two"></router-view>
+        <router-view class="view three" name="three"></router-view>
     </div>
 
 
@@ -23,7 +26,7 @@
 
     <script>
 
-        var pages = ["navbar", "signin", "signup"];
+        var pages = ["navbar", "signin", "signup", "sidebar"];
 
         $.when(
 
@@ -33,7 +36,7 @@
             }),
 
             $.each(pages, function (key, value) {
-                $.getScript("js/" + value + ".js");
+                $.getScript("js/components/" + value + ".js");
             })
 
         ).done(function () {

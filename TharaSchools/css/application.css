@@ -1,0 +1,49 @@
+/* starting sidebar css */
+
+.left-bar {
+    float: left;
+    height: 180vh;
+}
+
+.left-bar {
+    background: #337ab7;
+    display: inline-block;
+    white-space: nowrap;
+    width: 50px;
+    transition: width 1s;
+}
+
+.left-bar:hover {
+    width: 200px;
+}
+
+.menu-item:hover {
+    background-color: #ccc;
+}
+
+.left-bar .glyphicon {
+    margin: 15px;
+    width: 20px;
+    color: #fff;
+}
+
+menu-item.span.glyphicon.glyphicon-refresh {
+    font-size: 17px;
+    vertical-align: middle !important;
+}
+
+.menu-item {
+    height: 50px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.m-ln-15 {
+    margin-left: -15px;
+}
+
+.m-tn-55 {
+    margin-top: -55px;
+}
+
+/* end of sidebar css */
